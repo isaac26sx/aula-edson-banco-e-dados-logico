@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jogo</title>
+</head>
+<body>
+<h2>Adivinhe o Número (1 a 10)</h2>
+
+<input type="number" id="palpite">
+<button onclick="verificar()">Tentar</button>
+
+<p id="mensagem"></p>
+<p id="mensagem2"></p>
+
+<script>
+    let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+let tentativas = 0;
+
+function verificar() {
+
+let palpite = Number(document.getElementById("palpite").value);
+  tentativas++;
+
+       if (palpite === numeroSecreto ) {
+       document.getElementById("mensagem").innerText =
+          "correto filho de DEUS demorou mas saiu do deserto em " + tentativas + " tentativas!";
+} else {
+       document.getElementById("mensagem").innerText =
+          "errou profeta de baal tenta de novo e sai dessa vida.";
+}
+if(palpite < numeroSecreto){
+  document.getElementById("mensagem2").innerText =
+  "DEUS È maior"
+}else{
+   document.getElementById("mensagem2").innerText =
+  "DJABO e menor"
+}
+if(palpite === numeroSecreto){
+   document.getElementById("mensagem2").innerText =
+  "parabens"
+}
+}
+</script>
+
+</body>
+</html>
